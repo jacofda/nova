@@ -6,8 +6,8 @@
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+		<a href="/">
+			<img src="images/logo.png" alt="Nova Infissi Logo" />
 		</a>
 	</div>
 
@@ -19,11 +19,17 @@
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-				<a href="/about">About</a>
+			<li aria-current={$page.url.pathname === '/chi-siamo' ? 'page' : undefined}>
+				<a href="/chi-siamo">Chi Siamo</a>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
-				<a href="/sverdle">Sverdle</a>
+			<li aria-current={$page.url.pathname.startsWith('/prodotti') ? 'page' : undefined}>
+				<a href="/prodotti">Prodotti</a>
+			</li>
+			<li aria-current={$page.url.pathname.startsWith('/cataloghi') ? 'page' : undefined}>
+				<a href="/cataloghi">Cataloghi</a>
+			</li>
+			<li aria-current={$page.url.pathname.startsWith('/portfolio') ? 'page' : undefined}>
+				<a href="/portfolio">Portfolio</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -32,9 +38,7 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
+		<!-- here socials -->
 	</div>
 </header>
 
