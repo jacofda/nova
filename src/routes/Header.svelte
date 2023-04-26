@@ -1,17 +1,106 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
+
+	import { Collapse, Navbar, NavbarToggler, Nav, NavItem, Icon } from 'sveltestrap';
+
+	let isOpen = false;
+
+	function handleUpdate(event: any) {
+		isOpen = event.detail.isOpen;
+	}
 </script>
 
-<header>
-	<div class="corner">
-		<a href="/">
-			<img src="images/logo.png" alt="Nova Infissi Logo" />
-		</a>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<ul
+				class="list-group list-group-horizontal d-flex justify-content-center justify-content-md-start"
+			>
+				<li class="list-group-item border-0 py-0 d-flex align-items-center">
+					<Icon name="phone" class="me-2" /><small class="text-muted"> 347 780 6869 </small>
+				</li>
+				<li class="list-group-item border-0 py-0 d-flex align-items-center">
+					<Icon name="house" class="me-2" /><small class="text-muted"> solo su appuntamento </small>
+				</li>
+				<li class="list-group-item border-0 py-0 d-flex align-items-center">
+					<Icon name="at" class="me-2" /><small class="text-muted"> nova.infissi@gmail.com </small>
+				</li>
+			</ul>
+		</div>
+		<div
+			class="col-md-4  list-group-horizontal d-flex justify-content-center justify-content-md-end"
+		>
+			<ul class="list-group list-group-horizontal">
+				<li class="list-group-item rounded-0 border-bottom-0 py-0 d-flex align-items-center">
+					<Icon name="facebook" />
+				</li>
+				<li class="list-group-item rounded-0 border-bottom-0 py-0 d-flex align-items-center">
+					<Icon name="at" />
+				</li>
+				<li class="list-group-item rounded-0 border-bottom-0 py-0 d-flex align-items-center">
+					<Icon name="whatsapp" />
+				</li>
+				<li class="list-group-item rounded-0 border-bottom-0 py-0 d-flex align-items-center">
+					<Icon name="map" />
+				</li>
+			</ul>
+		</div>
 	</div>
+</div>
+<div class="bg-light py-2 border-top border-bottom">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<a href="/" class="d-block text-center">
+					<img src="/images/logo.png" alt="Nova Infissi Logo" />
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
 
-	<nav>
+<header class="d-flex bg-white d-flex justify-content-end justify-content-md-center">
+	<Navbar color="white" light expand="md">
+		<NavbarToggler on:click={() => (isOpen = !isOpen)} />
+		<Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
+			<Nav class="ms-auto" navbar>
+				<NavItem>
+					<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+						<a href="/">Home</a>
+					</li>
+				</NavItem>
+				<NavItem>
+					<li aria-current={$page.url.pathname === '/chi-siamo' ? 'page' : undefined}>
+						<a href="/chi-siamo">Chi Siamo</a>
+					</li>
+				</NavItem>
+				<NavItem>
+					<li aria-current={$page.url.pathname.startsWith('/prodotti') ? 'page' : undefined}>
+						<a href="/prodotti">Prodotti</a>
+					</li>
+				</NavItem>
+				<NavItem>
+					<li aria-current={$page.url.pathname.startsWith('/cataloghi') ? 'page' : undefined}>
+						<a href="/cataloghi">Cataloghi</a>
+					</li>
+				</NavItem>
+
+				<NavItem>
+					<li aria-current={$page.url.pathname.startsWith('/portfolio') ? 'page' : undefined}>
+						<a href="/portfolio">Portfolio</a>
+					</li>
+				</NavItem>
+
+				<NavItem>
+					<li aria-current={$page.url.pathname.startsWith('/contatti') ? 'page' : undefined}>
+						<a href="/contatti">Contatti</a>
+					</li>
+				</NavItem>
+			</Nav>
+		</Collapse>
+	</Navbar>
+
+	<!-- <nav>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
@@ -32,57 +121,16 @@
 				<a href="/portfolio">Portfolio</a>
 			</li>
 		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
-	</nav>
-
-	<div class="corner">
-		<!-- here socials -->
-	</div>
+	</nav> -->
 </header>
 
 <style>
 	header {
 		display: flex;
-		justify-content: space-between;
-	}
-
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
-
-	.corner a {
-		display: flex;
-		align-items: center;
 		justify-content: center;
-		width: 100%;
-		height: 100%;
+		background-color: #fff;
+		box-shadow: 0px 3px 3px #ebebeb;
 	}
-
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	}
-
-	nav {
-		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
-	}
-
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
-	}
-
 	ul {
 		position: relative;
 		padding: 0;
@@ -99,6 +147,8 @@
 	li {
 		position: relative;
 		height: 100%;
+		padding-top: 0.4rem;
+		padding-bottom: 0.4rem;
 	}
 
 	li[aria-current='page']::before {
@@ -107,13 +157,13 @@
 		width: 0;
 		height: 0;
 		position: absolute;
-		top: 0;
+		bottom: 0;
 		left: calc(50% - var(--size));
 		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
+		border-bottom: var(--size) solid var(--bs-gray-700);
 	}
 
-	nav a {
+	li a {
 		display: flex;
 		height: 100%;
 		align-items: center;
