@@ -36,8 +36,8 @@
 		{/each}
 	</div>
 
-	<CarouselControl direction="prev" bind:activeIndex {items} />
-	<CarouselControl direction="next" bind:activeIndex {items} />
+	<!-- <CarouselControl direction="prev" bind:activeIndex {items} />
+	<CarouselControl direction="next" bind:activeIndex {items} /> -->
 </Carousel>
 
 <style>
