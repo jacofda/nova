@@ -12,3 +12,15 @@ p{font-family: 'Open Sans', sans-serif; font-size: 1rem;;}
 .carousel-item {
   height: 100%;
 }
+.list-style-none{
+  list-style: none;
+}
+.fs-7{
+  font-size: 0.9rem;
+} 
+.fs-8{
+  font-size: 0.8rem;
+} 
+.object-fit-cover{
+  object-fit: cover;
+}

@@ -2,8 +2,6 @@
 	/** @type {import('./$types').PageData} */
 	export let data;
 
-	console.log(data);
-
 	import { Col, Row } from 'sveltestrap';
 	import SectionTitle from '$lib/components/elements/SectionTitle.svelte';
 	import TheCard from '$lib/components/elements/TheCard.svelte';

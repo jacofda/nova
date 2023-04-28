@@ -16,13 +16,13 @@
 			<ul
 				class="list-group list-group-horizontal d-flex justify-content-center justify-content-md-start"
 			>
-				<li class="list-group-item border-0 py-0 d-flex align-items-center">
+				<li class="list-group-item border-0 py-0 d-flex align-items-center d-none d-md-flex">
 					<Icon name="phone" class="me-2" /><small class="text-muted"> 347 780 6869 </small>
 				</li>
 				<li class="list-group-item border-0 py-0 d-flex align-items-center">
 					<Icon name="house" class="me-2" /><small class="text-muted"> solo su appuntamento </small>
 				</li>
-				<li class="list-group-item border-0 py-0 d-flex align-items-center">
+				<li class="list-group-item border-0 py-0 d-flex align-items-center d-none d-lg-flex">
 					<Icon name="at" class="me-2" /><small class="text-muted"> nova.infissi@gmail.com </small>
 				</li>
 			</ul>
