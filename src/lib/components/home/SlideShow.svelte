@@ -1,21 +1,30 @@
 <script lang="ts">
-	import { Carousel, CarouselControl, CarouselIndicators, CarouselItem } from 'sveltestrap';
-
+	import {
+		Carousel,
+		CarouselControl,
+		CarouselIndicators,
+		CarouselItem,
+		CarouselCaption
+	} from 'sveltestrap';
+	import MyCarouselCaption from './MyCarouselCaption.svelte';
 	const items = [
 		{
 			url: 'https://www.novainfissi.it/public/img/slide-1.jpg',
-			title: '',
-			caption: ''
+			title: null,
+			caption: null,
+			link: null
 		},
 		{
 			url: 'https://www.novainfissi.it/public/img/slide-2.jpg',
-			title: 'Slide 2',
-			caption: 'Slide 2'
+			title: 'Esplora il nostro portfolio',
+			caption: 'PORTFOLIO LAVORI',
+			link: '/portfolio'
 		},
 		{
 			url: 'https://www.novainfissi.it/public/img/slide-3.jpg',
-			title: 'Slide 3',
-			caption: 'Slide 3'
+			title: 'Scarica i catagloghi dei nostri prodotti',
+			caption: 'CATALOGHI PDF',
+			link: '/cataloghi'
 		}
 	];
 	let activeIndex = 0;
@@ -31,7 +40,7 @@
 				itemIndex={index}
 				style="background-image: url({item.url});background-position:50% 50%;background-size:cover"
 			>
-				<!-- <CarouselCaption captionHeader={item.title} captionText={item.caption} /> -->
+				<MyCarouselCaption title={item.title} label={item.caption} link={item.link} />
 			</CarouselItem>
 		{/each}
 	</div>

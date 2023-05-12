@@ -24,3 +24,19 @@ p{font-family: 'Open Sans', sans-serif; font-size: 1rem;;}
 .object-fit-cover{
   object-fit: cover;
 }
+
+ul.horizontal-list {
+  list-style: none;
+}
+
+ul.horizontal-list li {
+  display: inline-block;
+  padding: 0 0.5rem;
+
+}
+
+
+ul.horizontal-list li a {
+  text-decoration: none;
+  color: #cecece;
+}

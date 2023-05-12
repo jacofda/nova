@@ -30,12 +30,17 @@
 	</div>
 </div>
 <div class="subfooter">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row mx-0">
 			<div class="col-md-4">
 				<small>Copyright © 2014 - {new Date().getFullYear()} Nova Infissi. P.IVA 02181550225</small>
 			</div>
-			<div class="col-md-8" />
+			<div class="col-md-8 text-right text-end">
+				<ul class="horizontal-list">
+					<li class=""><a href="/">Home</a></li>
+					<li class=""><a href="/chi-siamo">Chi Siamo</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>
@@ -58,7 +63,7 @@
 
 	.subfooter {
 		background-color: #22272b;
-		padding: 40px 0;
+		padding: 30px 0;
 		font-weight: 300;
 		color: #cecece;
 		font-size: 14px;

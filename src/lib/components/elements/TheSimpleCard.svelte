@@ -31,7 +31,7 @@
 			<div>
 				<p class="mt-2 mb-0"><small>{tags}</small></p>
 				<p class="title mb-2 fs-5"><strong>{title}</strong></p>
-				<p class="max-lines-2 fs-6">{description}</p>
+				<p class="max-lines-2 fs-6">{@html description}</p>
 			</div>
 			<div class="d-flex justify-content-end">
 				<a href={link} class="mb-2 btn btn-primary ">Read more</a>

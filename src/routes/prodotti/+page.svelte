@@ -5,6 +5,8 @@
 	import { Col, Row } from 'sveltestrap';
 	import SectionTitle from '$lib/components/elements/SectionTitle.svelte';
 	import TheSimpleCard from '$lib/components/elements/TheSimpleCard.svelte';
+
+	import { renderRichText } from '@storyblok/svelte';
 </script>
 
 <svelte:head>
@@ -23,8 +25,8 @@
 						title={story.content.title}
 						image={story.content.image}
 						tags={story.content.tags}
-						description={story.content.body}
-						link={`/portfolio/${story.slug}`}
+						description={renderRichText(story.content.body)}
+						link={`/prodotti/${story.slug}`}
 					/>
 				</Col>
 			{/each}
