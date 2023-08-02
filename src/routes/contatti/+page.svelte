@@ -28,7 +28,7 @@
 <section class="py-5">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 pe-md-5">
+			<div class="col-md-7 pe-md-5">
 				<h1 class="mb-2">Contatti</h1>
 				<p>
 					Non esitare a contattarci per ogni tipo di richiesta o informazione. Sempre pronti a darti
@@ -88,8 +88,23 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-4 ps-md-5 border-start">
+			<div class="col-md-5 ps-md-5 border-start">
 				<h3 class="mb-3">Dove siamo</h3>
+
+				<ul class="list-style-none ps-0">
+					<li><b>Nova Infissi di Cenci Giuseppe</b></li>
+					<li>Via Roma 4 - 38050 - Ospedaletto (TN)</li>
+				</ul>
+
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11077.825413591869!2d11.5538625!3d46.041995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477893ac8b50b383%3A0x1902b0ee90000118!2sNova%20Infissi%20di%20Cenci%20Giuseppe!5e0!3m2!1sen!2sit!4v1690970793364!5m2!1sen!2sit"
+					width="100%"
+					height="450"
+					style="border:0;"
+					loading="lazy"
+					title="google map"
+					referrerpolicy="no-referrer-when-downgrade"
+				/>
 			</div>
 		</div>
 	</div>

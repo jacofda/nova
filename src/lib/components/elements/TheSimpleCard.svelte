@@ -20,11 +20,18 @@
 	export let description!: string;
 </script>
 
-<article class="">
-	<div class="row h-100  border">
+<article class="p-3">
+	<div class="row h-100 border border-light shadow">
 		<div class="col-lg-6 ps-0">
 			{#if image}
-				<img class="img-fluid rounded mx-auto d-block" alt={image.alt} src={image.filename} />
+				<a href={link}>
+					<img
+						class="img-fluid rounded mx-auto d-block"
+						loading="lazy"
+						alt={image.alt}
+						src={image.filename}
+					/>
+				</a>
 			{/if}
 		</div>
 		<div class="col-lg-6 d-flex flex-column justify-content-between">
@@ -33,8 +40,8 @@
 				<p class="title mb-2 fs-5"><strong>{title}</strong></p>
 				<p class="max-lines-2 fs-6">{@html description}</p>
 			</div>
-			<div class="d-flex justify-content-end">
-				<a href={link} class="mb-2 btn btn-primary ">Read more</a>
+			<div class="d-flex justify-content-center justify-content-md-end">
+				<a href={link} class="mb-3 me-3 btn btn-dark ">Vedi prodotto</a>
 			</div>
 		</div>
 	</div>

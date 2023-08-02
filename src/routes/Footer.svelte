@@ -1,5 +1,17 @@
 <script lang="ts">
 	import { Icon } from 'sveltestrap';
+	let latestProducts: any[] = [];
+	import { onMount } from 'svelte';
+	import { useStoryblokApi } from '@storyblok/svelte';
+	onMount(async () => {
+		const storyblokApi = useStoryblokApi();
+		const { data } = await storyblokApi.get('cdn/stories', {
+			starts_with: 'prodotti/',
+			sort_by: 'created_at:desc',
+			per_page: 3
+		});
+		latestProducts = data.stories;
+	});
 </script>
 
 <div class="footer">
@@ -21,7 +33,28 @@
 				</ul>
 			</div>
 			<div class="col-lg-4">
-				<h5 class="fs-4">Ultimi prodotti</h5>
+				<h5 class="fs-4 mb-3">Ultimi prodotti</h5>
+				{#each latestProducts as story}
+					<div class="d-flex mb-3">
+						<div class=" me-2">
+							<a href={`/prodotti/${story.slug}`}>
+								<img
+									src={story.content.image.filename}
+									alt={story.content.title}
+									width="50"
+									class="rounded-3"
+								/></a
+							>
+						</div>
+
+						<div>
+							<a href={`/prodotti/${story.slug}`} class="text-decoration-none text-reset"
+								><h6 class="fs-7">{story.content.title}</h6></a
+							>
+							<small>{story.content.tags}</small>
+						</div>
+					</div>
+				{/each}
 			</div>
 			<div class="col-lg-4">
 				<h5 class="fs-4">Ultimi progetti</h5>

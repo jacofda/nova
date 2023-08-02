@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>Prodotti</title>
+	<title>I nostri infissi</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 

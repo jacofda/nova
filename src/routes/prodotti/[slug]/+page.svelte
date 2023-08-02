@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Prodotto | XXX</title>
+	<title>{data.story.content.title}</title>
 	<meta name="description" content="descrizione prodotto" />
 </svelte:head>
 
@@ -30,7 +30,9 @@
 			<Col md="3">
 				<h3>Info Prodotto</h3>
 				<p><b>Tipologia:</b> {data.story.content.tags}</p>
-				<p class="mt-4"><b>Descrizione:</b> {@html html}</p>
+				<!-- {#if html !== undefined}
+					<p class="mt-4"><b>Descrizione:</b> {@html html}</p>
+				{/if} -->
 			</Col>
 		</Row>
 	</div>
