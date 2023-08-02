@@ -5,7 +5,9 @@
 				<h1 class="text-center text-white">Esplora i cataloghi dei nostri fornitori (pdf)</h1>
 			</div>
 			<div class="col-md-4 text-center">
-				<a href="/cataloghi" class="btn btn-outline-secondary text-white btn-lg">Vedi Cataloghi</a>
+				<a href="/cataloghi" class="btn btn-outline-secondary text-white btn-lg mt-3 mt-md-0"
+					>Vedi Cataloghi</a
+				>
 			</div>
 		</div>
 	</div>

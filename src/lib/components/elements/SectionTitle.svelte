@@ -16,7 +16,7 @@
 					{title}
 				</h1>
 			</Col>
-			<Col md="6" class="d-flex justify-content-end">
+			<Col md="6" class="d-flex justify-content-center justify-content-md-end">
 				<ol class="breadcrumb">
 					<BreadcrumbItem><a href="/">Home</a></BreadcrumbItem>
 					{#if folder}

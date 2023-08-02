@@ -7,8 +7,11 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Nova Infissi di Cenci Giuseppe Ospedaletto Trento Vendita porte portoni serramenti</title>
+	<meta
+		name="description"
+		content="Vendita e posa infissi di Mirko Giuseppe Cenci. Ospedaletto (TN)"
+	/>
 </svelte:head>
 
 <SlideShow />

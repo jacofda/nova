@@ -32,31 +32,30 @@
 					<li><Icon name="envelope" /> nova.infissi@gmail.com</li>
 				</ul>
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-4 mt-3 mt-lg-0">
 				<h5 class="fs-4 mb-3">Ultimi prodotti</h5>
 				{#each latestProducts as story}
 					<div class="d-flex mb-3">
-						<div class=" me-2">
-							<a href={`/prodotti/${story.slug}`}>
+						<div class="me-2">
+							<a href={`/prodotti/${story.slug}`} class="d-block img-wrapper">
 								<img
 									src={story.content.image.filename}
 									alt={story.content.title}
-									width="50"
-									class="rounded-3"
+									class="rounded-3 object-fit-cover"
 								/></a
 							>
 						</div>
 
 						<div>
 							<a href={`/prodotti/${story.slug}`} class="text-decoration-none text-reset"
-								><h6 class="fs-7">{story.content.title}</h6></a
+								><h6 class="fs-7 mb-0">{story.content.title}</h6></a
 							>
 							<small>{story.content.tags}</small>
 						</div>
 					</div>
 				{/each}
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-4  mt-3 mt-lg-0">
 				<h5 class="fs-4">Ultimi progetti</h5>
 			</div>
 		</div>
@@ -100,5 +99,15 @@
 		font-weight: 300;
 		color: #cecece;
 		font-size: 14px;
+	}
+
+	.img-wrapper {
+		width: 50px;
+		height: 50px;
+	}
+	.object-fit-cover {
+		object-fit: cover;
+		width: 50px;
+		height: 50px;
 	}
 </style>

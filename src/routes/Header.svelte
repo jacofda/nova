@@ -8,6 +8,12 @@
 	function handleUpdate(event: any) {
 		isOpen = event.detail.isOpen;
 	}
+
+	function handleClick() {
+		if (isOpen) {
+			isOpen = false;
+		}
+	}
 </script>
 
 <div class="container">
@@ -32,16 +38,21 @@
 		>
 			<ul class="list-group list-group-horizontal">
 				<li class="list-group-item rounded-0 border-bottom-0 py-0 d-flex align-items-center">
-					<Icon name="facebook" />
+					<a href="https://www.facebook.com/pages/Nova-Infissi/904543452930877" target="_blank"
+						><Icon name="facebook" /></a
+					>
 				</li>
 				<li class="list-group-item rounded-0 border-bottom-0 py-0 d-flex align-items-center">
-					<Icon name="at" />
+					<a href="mailto:nova.infissi@gmail.com" target="_BLANK"><Icon name="at" /></a>
 				</li>
 				<li class="list-group-item rounded-0 border-bottom-0 py-0 d-flex align-items-center">
-					<Icon name="whatsapp" />
+					<a href="tel:+393477806869" target="_BLANK"><Icon name="whatsapp" /></a>
 				</li>
 				<li class="list-group-item rounded-0 border-bottom-0 py-0 d-flex align-items-center">
-					<Icon name="map" />
+					<a
+						href="https://www.google.com/maps/place/Nova+Infissi+di+Cenci+Giuseppe/@46.04209,11.553852,17z/data=!3m1!4b1!4m2!3m1!1s0x477893ac8b50b383:0x1902b0ee90000118"
+						target="_BLANK"><Icon name="map" /></a
+					>
 				</li>
 			</ul>
 		</div>
@@ -59,69 +70,49 @@
 	</div>
 </div>
 
-<header class="d-flex bg-white d-flex justify-content-end justify-content-md-center">
-	<Navbar color="white" light expand="md">
+<header class="bg-white justify-content-start justify-content-md-center w-100">
+	<Navbar color="white" light expand="md" class="">
 		<NavbarToggler on:click={() => (isOpen = !isOpen)} />
 		<Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
 			<Nav class="ms-auto" navbar>
 				<NavItem>
 					<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-						<a href="/">Home</a>
+						<a href="/" on:click={handleClick}>Home</a>
 					</li>
 				</NavItem>
 				<NavItem>
 					<li aria-current={$page.url.pathname === '/chi-siamo' ? 'page' : undefined}>
-						<a href="/chi-siamo">Chi Siamo</a>
+						<a href="/chi-siamo" on:click={handleClick}>Chi Siamo</a>
 					</li>
 				</NavItem>
 				<NavItem>
 					<li aria-current={$page.url.pathname.startsWith('/prodotti') ? 'page' : undefined}>
-						<a href="/prodotti">Prodotti</a>
+						<a href="/prodotti" on:click={handleClick}>Prodotti</a>
 					</li>
 				</NavItem>
 				<NavItem>
 					<li aria-current={$page.url.pathname.startsWith('/cataloghi') ? 'page' : undefined}>
-						<a href="/cataloghi">Cataloghi</a>
+						<a href="/cataloghi" on:click={handleClick}>Cataloghi</a>
 					</li>
 				</NavItem>
 
 				<NavItem>
 					<li aria-current={$page.url.pathname.startsWith('/portfolio') ? 'page' : undefined}>
-						<a href="/portfolio">Portfolio</a>
+						<a href="/portfolio" on:click={handleClick}>Portfolio</a>
 					</li>
 				</NavItem>
 
 				<NavItem>
 					<li aria-current={$page.url.pathname.startsWith('/contatti') ? 'page' : undefined}>
-						<a href="/contatti">Contatti</a>
+						<a href="/contatti" on:click={handleClick}>Contatti</a>
 					</li>
 				</NavItem>
 			</Nav>
 		</Collapse>
+		{#if !isOpen}
+			<span class="d-md-none ms-1">MENU</span>
+		{/if}
 	</Navbar>
-
-	<!-- <nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/chi-siamo' ? 'page' : undefined}>
-				<a href="/chi-siamo">Chi Siamo</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/prodotti') ? 'page' : undefined}>
-				<a href="/prodotti">Prodotti</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/cataloghi') ? 'page' : undefined}>
-				<a href="/cataloghi">Cataloghi</a>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/portfolio') ? 'page' : undefined}>
-				<a href="/portfolio">Portfolio</a>
-			</li>
-		</ul>
-	</nav> -->
 </header>
 
 <style>
@@ -150,19 +141,19 @@
 		padding-top: 0.4rem;
 		padding-bottom: 0.4rem;
 	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		bottom: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-bottom: var(--size) solid var(--bs-gray-700);
+	@media (min-width: 768px) {
+		li[aria-current='page']::before {
+			--size: 6px;
+			content: '';
+			width: 0;
+			height: 0;
+			position: absolute;
+			bottom: 0;
+			left: calc(50% - var(--size));
+			border: var(--size) solid transparent;
+			border-bottom: var(--size) solid var(--bs-gray-700);
+		}
 	}
-
 	li a {
 		display: flex;
 		height: 100%;
