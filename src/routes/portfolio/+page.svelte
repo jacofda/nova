@@ -4,7 +4,7 @@
 
 	import { Col, Row } from 'sveltestrap';
 	import SectionTitle from '$lib/components/elements/SectionTitle.svelte';
-	import TheCard from '$lib/components/elements/TheCard.svelte';
+	import TheSimpleCard from '$lib/components/elements/TheSimpleCard.svelte';
 </script>
 
 <svelte:head>
@@ -19,12 +19,13 @@
 		<Row>
 			{#each data.story.stories as story}
 				<Col md="6">
-					<TheCard
+					<TheSimpleCard
 						title={story.content.title}
 						image={story.content.image}
 						tags={story.content.tags}
 						description={story.content.abstract}
 						link={`/portfolio/${story.slug}`}
+						label="Portfolio"
 					/>
 				</Col>
 			{/each}

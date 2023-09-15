@@ -27,6 +27,7 @@
 						tags={story.content.tags}
 						description={renderRichText(story.content.body)}
 						link={`/prodotti/${story.slug}`}
+						label="Prodotto"
 					/>
 				</Col>
 			{/each}

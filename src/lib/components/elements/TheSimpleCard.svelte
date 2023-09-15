@@ -18,15 +18,16 @@
 	export let tags!: string;
 	export let image!: Media;
 	export let description!: string;
+	export let label!: string;
 </script>
 
 <article class="p-3">
 	<div class="row h-100 border border-light shadow">
 		<div class="col-lg-6 ps-0">
 			{#if image}
-				<a href={link}>
+				<a href={link} class="h-320 d-block">
 					<img
-						class="img-fluid rounded mx-auto d-block"
+						class="object-cover img-fluid rounded mx-auto d-block"
 						loading="lazy"
 						alt={image.alt}
 						src={image.filename}
@@ -41,13 +42,21 @@
 				<p class="max-lines-2 fs-6">{@html description}</p>
 			</div>
 			<div class="d-flex justify-content-center justify-content-md-end">
-				<a href={link} class="mb-3 me-3 btn btn-dark ">Vedi prodotto</a>
+				<a href={link} class="mb-3 me-3 btn btn-dark ">Vedi {label}</a>
 			</div>
 		</div>
 	</div>
 </article>
 
 <style>
+	.h-320 {
+		height: 320px;
+	}
+
+	.object-cover {
+		object-fit: cover;
+		height: 100%;
+	}
 	.max-lines-2 {
 		display: -webkit-box;
 		-webkit-line-clamp: 2;

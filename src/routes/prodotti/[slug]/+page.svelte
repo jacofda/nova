@@ -18,7 +18,7 @@
 <section class="py-5">
 	<div class="container">
 		<Row>
-			<Col md="9">
+			<Col md={{ size: 8, offset: 2 }}>
 				{#if data.story.content?.image}
 					<img
 						class="img-fluid rounded mx-auto d-block"
@@ -27,13 +27,13 @@
 					/>
 				{/if}
 			</Col>
-			<Col md="3">
+			<!-- <Col md="3">
 				<h3>Info Prodotto</h3>
 				<p><b>Tipologia:</b> {data.story.content.tags}</p>
-				<!-- {#if html !== undefined}
+				{#if html !== undefined}
 					<p class="mt-4"><b>Descrizione:</b> {@html html}</p>
-				{/if} -->
-			</Col>
+				{/if}
+			</Col> -->
 		</Row>
 	</div>
 </section>

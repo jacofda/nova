@@ -36,7 +36,9 @@
 	"dependencies": {
 		"@emailjs/browser": "^3.11.0",
 		"@storyblok/svelte": "^2.4.8",
+		"bigger-picture": "^1.1.11",
 		"clone-deep": "^4.0.1",
-		"sveltestrap": "^5.10.0"
+		"sveltestrap": "^5.10.0",
+		"swiper": "^10.2.0"
 	}
 }
