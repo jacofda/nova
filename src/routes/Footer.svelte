@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Icon } from 'sveltestrap';
 	let latestProducts: any[] = [];
+	let latestPortfolio: any[] = [];
 	import { onMount } from 'svelte';
 	import { useStoryblokApi } from '@storyblok/svelte';
 	onMount(async () => {
@@ -11,6 +12,13 @@
 			per_page: 3
 		});
 		latestProducts = data.stories;
+
+		const response = await storyblokApi.get('cdn/stories', {
+			starts_with: 'portfolio/',
+			sort_by: 'created_at:desc',
+			per_page: 3
+		});
+		latestPortfolio = response.data.stories;
 	});
 </script>
 
@@ -56,7 +64,28 @@
 				{/each}
 			</div>
 			<div class="col-lg-4  mt-3 mt-lg-0">
-				<h5 class="fs-4">Ultimi progetti</h5>
+				<h5 class="fs-4 mb-3">Ultimi progetti</h5>
+
+				{#each latestPortfolio as story}
+					<div class="d-flex mb-3">
+						<div class="me-2">
+							<a href={`/portfolio/${story.slug}`} class="d-block img-wrapper">
+								<img
+									src={story.content?.image?.filename + '/m/50x50'}
+									alt={story.content.title}
+									class="rounded-3 object-fit-cover"
+								/></a
+							>
+						</div>
+
+						<div>
+							<a href={`/portfolio/${story.slug}`} class="text-decoration-none text-reset"
+								><h6 class="fs-7 mb-0">{story.content.title}</h6></a
+							>
+							<small>{story.content.tags}</small>
+						</div>
+					</div>
+				{/each}
 			</div>
 		</div>
 	</div>

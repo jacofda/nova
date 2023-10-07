@@ -21,7 +21,6 @@
 		setTimeout(() => {
 			// grab image links
 			const imageLinks = document.querySelectorAll('.opener');
-			console.log(imageLinks);
 			// add click listener to open BiggerPicture
 			for (let link of imageLinks) {
 				link.addEventListener('click', openGallery);
@@ -56,6 +55,27 @@
 			</Col>
 			<Col md="3" />
 		</Row>
+
+		{#if data.story.content.gallery?.length === 0}
+			<Row class="py-5">
+				<Col md={{ size: 6, offset: 3 }}>
+					<a
+						class="opener"
+						href={data.story.content.image?.filename + '/m/'}
+						data-img={data.story.content.image?.filename + '/m/'}
+					>
+						<img
+							src={data.story.content.image?.filename + '/m/'}
+							alt={data.story.content.image?.filename + '/m/'}
+							class="img-fluid rounded-3"
+							loading="lazy"
+						/></a
+					>
+					<p class="mt-1 text-gray">{data.story.content?.abstract}</p>
+				</Col>
+			</Row>
+		{/if}
+
 		{#if showOnClient}
 			<Row class="py-5">
 				<Col>

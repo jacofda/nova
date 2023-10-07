@@ -24,7 +24,11 @@
 	<div class="row h-100  border">
 		<div class="col-lg-6 ps-0">
 			{#if image}
-				<img class="img-fluid rounded mx-auto d-block" alt={image.alt} src={image.filename} />
+				<img
+					class="img-fluid rounded mx-auto d-block"
+					alt={image.alt}
+					src={image.filename + '/m/0x450'}
+				/>
 			{/if}
 		</div>
 		<div class="col-lg-6 d-flex flex-column justify-content-between">

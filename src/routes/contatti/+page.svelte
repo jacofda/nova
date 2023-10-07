@@ -1,23 +1,60 @@
 <script lang="ts">
 	import emailjs from '@emailjs/browser';
 
-	const submitForm = async (event: any) => {
-		emailjs
-			.sendForm(
-				import.meta.env.VITE_EMAILJS_SERVICE,
-				import.meta.env.VITE_EMAILJS_TEMPLATE,
-				event.target,
-				import.meta.env.VITE_EMAILJS_KEY
-			)
-			.then(
-				(result) => {
-					console.log('SUCCESS!', result.text);
-				},
-				(error) => {
-					console.log('FAILED...', error.text);
-				}
-			);
+	import { Toast, ToastBody, ToastHeader } from 'sveltestrap';
+	let isOpen = false;
+
+	function toggle() {
+		isOpen = !isOpen;
+	}
+
+	let timer: number = 0;
+
+	import { onMount } from 'svelte';
+	onMount(() => {
+		setInterval(() => {
+			timer += 1;
+		}, 1000);
+	});
+	let fb = {
+		title: 'Richiesta inviata',
+		body: 'Vi risponderemo al più presto',
+		color: 'success'
 	};
+	const submitForm = async (event: any) => {
+		event.preventDefault();
+		if (timer <= 12) {
+			fb = {
+				title: 'Errore',
+				body: 'Avete compilato il form troppo velocemente, riprovate tra qualche secondo',
+				color: 'danger'
+			};
+
+			setTimeout(() => {
+				toggle();
+			}, 5000);
+		}
+
+		toggle();
+	};
+
+	// const submitForm = async (event: any) => {
+	// 	emailjs
+	// 		.sendForm(
+	// 			import.meta.env.VITE_EMAILJS_SERVICE,
+	// 			import.meta.env.VITE_EMAILJS_TEMPLATE,
+	// 			event.target,
+	// 			import.meta.env.VITE_EMAILJS_KEY
+	// 		)
+	// 		.then(
+	// 			(result) => {
+	// 				console.log('SUCCESS!', result.text);
+	// 			},
+	// 			(error) => {
+	// 				console.log('FAILED...', error.text);
+	// 			}
+	// 		);
+	// };
 </script>
 
 <svelte:head>
@@ -34,6 +71,14 @@
 					Non esitare a contattarci per ogni tipo di richiesta o informazione. Sempre pronti a darti
 					una risposta!
 				</p>
+
+				<div class=" d-flex justify-content-center my-3">
+					<Toast class="mr-1" {isOpen}>
+						<ToastHeader icon={fb.color} {toggle}>{fb.title}</ToastHeader>
+						<ToastBody>{fb.body}</ToastBody>
+					</Toast>
+				</div>
+
 				<form on:submit|preventDefault={submitForm}>
 					<div class="form-floating mb-3">
 						<input
@@ -83,8 +128,23 @@
 						<label for="floatingTextarea">Messaggio</label>
 					</div>
 
-					<div class="mb-3">
-						<button class="btn btn-primary" type="submit">Invia richiesta</button>
+					<div class="form-check">
+						<input
+							class="form-check-input"
+							type="checkbox"
+							value=""
+							required
+							id="flexCheckDefault"
+						/>
+						<label class="form-check-label" for="flexCheckDefault">
+							Letta l'informativa ai sensi dell’art. 13 Reg. nr. UE 679/2016, presto il mio
+							specifico consenso al trattamento dei dati forniti per le specifiche finalità ivi
+							indicate
+						</label>
+					</div>
+
+					<div class="mb-3 text-center text-lg-left mt-4 mb-5">
+						<button class="btn btn-primary btn-lg" type="submit">Invia richiesta</button>
 					</div>
 				</form>
 			</div>

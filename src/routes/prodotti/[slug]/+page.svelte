@@ -22,18 +22,11 @@
 				{#if data.story.content?.image}
 					<img
 						class="img-fluid rounded mx-auto d-block"
-						src={data.story.content.image.filename}
+						src={data.story.content.image.filename + '/m/'}
 						alt={data.story.content.title}
 					/>
 				{/if}
 			</Col>
-			<!-- <Col md="3">
-				<h3>Info Prodotto</h3>
-				<p><b>Tipologia:</b> {data.story.content.tags}</p>
-				{#if html !== undefined}
-					<p class="mt-4"><b>Descrizione:</b> {@html html}</p>
-				{/if}
-			</Col> -->
 		</Row>
 	</div>
 </section>
