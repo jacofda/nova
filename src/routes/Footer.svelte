@@ -99,7 +99,7 @@
 			<div class="col-md-8 text-right text-end">
 				<ul class="horizontal-list">
 					<li class=""><a href="/">Home</a></li>
-					<li class=""><a href="/chi-siamo">Chi Siamo</a></li>
+					<li class=""><a href="/novainfissi-cenci-ospedaletto">Chi Siamo</a></li>
 				</ul>
 			</div>
 		</div>

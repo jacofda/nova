@@ -81,8 +81,12 @@
 					</li>
 				</NavItem>
 				<NavItem>
-					<li aria-current={$page.url.pathname === '/chi-siamo' ? 'page' : undefined}>
-						<a href="/chi-siamo" on:click={handleClick}>Chi Siamo</a>
+					<li
+						aria-current={$page.url.pathname === '/novainfissi-cenci-ospedaletto'
+							? 'page'
+							: undefined}
+					>
+						<a href="/novainfissi-cenci-ospedaletto" on:click={handleClick}>Chi Siamo</a>
 					</li>
 				</NavItem>
 				<NavItem>

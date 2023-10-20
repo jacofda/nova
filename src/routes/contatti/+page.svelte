@@ -21,45 +21,69 @@
 		body: 'Vi risponderemo al più presto',
 		color: 'success'
 	};
-	const submitForm = async (event: any) => {
-		event.preventDefault();
-		if (timer <= 12) {
-			fb = {
-				title: 'Errore',
-				body: 'Avete compilato il form troppo velocemente, riprovate tra qualche secondo',
-				color: 'danger'
-			};
-
-			setTimeout(() => {
-				toggle();
-			}, 5000);
-		}
-
-		toggle();
-	};
 
 	// const submitForm = async (event: any) => {
-	// 	emailjs
-	// 		.sendForm(
-	// 			import.meta.env.VITE_EMAILJS_SERVICE,
-	// 			import.meta.env.VITE_EMAILJS_TEMPLATE,
-	// 			event.target,
-	// 			import.meta.env.VITE_EMAILJS_KEY
-	// 		)
-	// 		.then(
-	// 			(result) => {
-	// 				console.log('SUCCESS!', result.text);
-	// 			},
-	// 			(error) => {
-	// 				console.log('FAILED...', error.text);
-	// 			}
-	// 		);
+	// 	event.preventDefault();
+	// 	if (timer <= 12) {
+	// fb = {
+	// 	title: 'Errore',
+	// 	body: 'Avete compilato il form troppo velocemente, riprovate tra qualche secondo',
+	// 	color: 'danger'
 	// };
+
+	// 		setTimeout(() => {
+	// 			toggle();
+	// 		}, 5000);
+	// 	}
+
+	// 	toggle();
+	// };
+
+	const submitForm = async (event: any) => {
+		emailjs
+			.sendForm(
+				import.meta.env.VITE_EMAILJS_SERVICE,
+				import.meta.env.VITE_EMAILJS_TEMPLATE,
+				event.target,
+				import.meta.env.VITE_EMAILJS_KEY
+			)
+			.then(
+				(result) => {
+					toggle();
+					console.log('SUCCESS!', result.text);
+				},
+				(error) => {
+					fb = {
+						title: 'Errore',
+						body: 'Avete compilato il form troppo velocemente, riprovate tra qualche secondo',
+						color: 'danger'
+					};
+					toggle();
+					console.log('FAILED...', error.text);
+				}
+			);
+	};
 </script>
 
 <svelte:head>
 	<title>Contatti</title>
 	<meta name="description" content="contatti" />
+
+	<script
+		src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+		async
+		defer
+	>
+	</script>
+
+	<script type="text/javascript">
+		var onloadCallback = function () {
+			// alert('grecaptcha is ready!');
+			grecaptcha.render('html_element', {
+				sitekey: '6Le4q7goAAAAAJuBFyoj3Az0dAAJ2Djrj2XMLNSe'
+			});
+		};
+	</script>
 </svelte:head>
 
 <section class="py-5">
@@ -142,7 +166,11 @@
 							indicate
 						</label>
 					</div>
-
+					<div
+						id="html_element"
+						class="g-recaptcha"
+						data-sitekey="6Le4q7goAAAAAJuBFyoj3Az0dAAJ2Djrj2XMLNSe"
+					/>
 					<div class="mb-3 text-center text-lg-left mt-4 mb-5">
 						<button class="btn btn-primary btn-lg" type="submit">Invia richiesta</button>
 					</div>

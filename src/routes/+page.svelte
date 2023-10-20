@@ -7,11 +7,22 @@
 </script>
 
 <svelte:head>
-	<title>Nova Infissi di Cenci Giuseppe Ospedaletto Trento Vendita porte portoni serramenti</title>
+	<title>Nova Infissi di Cenci Giuseppe Ospedaletto Trento serramenti</title>
 	<meta
 		name="description"
+		content="vendita e posa infissi e serramenti ospedaletto borgo valsugana trento mirko giuseppe cenci serramenti porte portoni automatiche chiusure sicure"
+	/>
+	<link rel="canonical" href="https://www.novainfissi.it/" />
+	<meta property="og:url" content="https://www.novainfissi.it/" />
+	<meta property="og:title" content="Nova Infissi Cenci Giuseppe Ospedaletto" />
+	<meta
+		property="og:description"
 		content="Vendita e posa infissi di Mirko Giuseppe Cenci. Ospedaletto (TN)"
 	/>
+	<meta property="og:image" content="/images/fb/fb-home-1.jpg" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta property="og:image:width" content="1230" />
+	<meta property="og:image:height" content="630" />
 </svelte:head>
 
 <SlideShow />

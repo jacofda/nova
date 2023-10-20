@@ -17,7 +17,9 @@
 					L'attività si espande anche verso le porte interne ed esterne, portoni sezionabili e
 					basculanti, tapparelle e gelosie, poggioli, tende da sole e scale interne.
 				</p>
-				<a href="/chi-siamo" class="btn btn-secondary mt-3 mt-md-0">Leggi Tutto</a>
+				<a href="/novainfissi-cenci-ospedaletto" class="btn btn-secondary mt-3 mt-md-0"
+					>Leggi Tutto</a
+				>
 			</Col>
 		</Row>
 	</div>

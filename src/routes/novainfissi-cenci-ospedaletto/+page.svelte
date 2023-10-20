@@ -1,5 +1,4 @@
 <script>
-	import { Col, Row } from 'sveltestrap';
 	import SectionTitle from '$lib/components/elements/SectionTitle.svelte';
 </script>
 
@@ -7,9 +6,19 @@
 	<title>Chi Siamo | Novainfissi Ospedaletto Trento</title>
 	<meta
 		name="description"
-		content="Nova Infissi standard di qualità e affibilità Ditta creata da Cenci Giuseppe Mirko nel 1999 ..."
+		content="Nova Infissi standard di qualità e affibilità Ditta creata da Cenci Giuseppe Mirko nel 1999"
 	/>
 	<link rel="canonical" href="https://www.novainfissi.it/novainfissi-cenci-ospedaletto" />
+	<meta property="og:url" content="https://www.novainfissi.it/" />
+	<meta property="og:title" content="Chi Siamo | Novainfissi Ospedaletto Trento" />
+	<meta
+		property="og:description"
+		content="Nova Infissi standard di qualità e affibilità Ditta creata da Cenci Giuseppe Mirko nel 1999, quando, dopo molti anni di lavoro dipendente con una azienda di falegnameria, Mirko decise di avviare un'attività propria, specializzata nella vendita ed installazione di infissi. Già nei primi anni, dopo una veloce fase di rodaggio, iniziò la vendita di infissi in legno. Cenci"
+	/>
+	<meta property="og:image" content="/images/fb/fb-chisiamo.jpg" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta property="og:image:width" content="1230" />
+	<meta property="og:image:height" content="630" />
 </svelte:head>
 
 <SectionTitle title="Chi siamo" />
