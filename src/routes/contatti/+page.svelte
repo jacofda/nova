@@ -40,6 +40,10 @@
 	// };
 
 	const submitForm = async (event: any) => {
+		console.log('VITE_EMAILJS_SERVICE', import.meta.env.VITE_EMAILJS_SERVICE);
+		console.log('VITE_EMAILJS_TEMPLATE', import.meta.env.VITE_EMAILJS_TEMPLATE);
+		console.log('VITE_EMAILJS_KEY', import.meta.env.VITE_EMAILJS_KEY);
+
 		emailjs
 			.sendForm(
 				import.meta.env.VITE_EMAILJS_SERVICE,
