@@ -22,27 +22,8 @@
 		color: 'success'
 	};
 
-	// const submitForm = async (event: any) => {
-	// 	event.preventDefault();
-	// 	if (timer <= 12) {
-	// fb = {
-	// 	title: 'Errore',
-	// 	body: 'Avete compilato il form troppo velocemente, riprovate tra qualche secondo',
-	// 	color: 'danger'
-	// };
-
-	// 		setTimeout(() => {
-	// 			toggle();
-	// 		}, 5000);
-	// 	}
-
-	// 	toggle();
-	// };
-
 	const submitForm = async (event: any) => {
-		console.log('VITE_EMAILJS_SERVICE', import.meta.env.VITE_EMAILJS_SERVICE);
-		console.log('VITE_EMAILJS_TEMPLATE', import.meta.env.VITE_EMAILJS_TEMPLATE);
-		console.log('VITE_EMAILJS_KEY', import.meta.env.VITE_EMAILJS_KEY);
+		const form = document.getElementById('cform');
 
 		emailjs
 			.sendForm(
@@ -55,6 +36,8 @@
 				(result) => {
 					toggle();
 					console.log('SUCCESS!', result.text);
+					// @ts-ignore
+					form.reset();
 				},
 				(error) => {
 					fb = {
@@ -64,14 +47,19 @@
 					};
 					toggle();
 					console.log('FAILED...', error.text);
+					// @ts-ignore
+					form.reset();
 				}
 			);
 	};
 </script>
 
 <svelte:head>
-	<title>Contatti</title>
-	<meta name="description" content="contatti" />
+	<title>Contatti | Novainfissi Ospedaletto Trento</title>
+	<meta
+		name="description"
+		content="Visite in sede solo su appuntamento, altrimenti scrivi un un'email o chiamaci"
+	/>
 
 	<script
 		src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
@@ -107,7 +95,7 @@
 					</Toast>
 				</div>
 
-				<form on:submit|preventDefault={submitForm}>
+				<form on:submit|preventDefault={submitForm} id="cform">
 					<div class="form-floating mb-3">
 						<input
 							name="name"
