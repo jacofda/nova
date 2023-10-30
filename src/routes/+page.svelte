@@ -19,7 +19,7 @@
 		property="og:description"
 		content="Vendita e posa infissi di Mirko Giuseppe Cenci. Ospedaletto (TN)"
 	/>
-	<meta property="og:image" content="/images/fb/fb-home-1.jpg" />
+	<meta property="og:image" content="https://ik.imagekit.io/2gweb/nova/fb-home-1.jpg" />
 	<meta property="og:image:type" content="image/jpeg" />
 	<meta property="og:image:width" content="1230" />
 	<meta property="og:image:height" content="630" />

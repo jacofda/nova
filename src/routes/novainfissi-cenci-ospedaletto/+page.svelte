@@ -15,7 +15,7 @@
 		property="og:description"
 		content="Nova Infissi standard di qualità e affibilità Ditta creata da Cenci Giuseppe Mirko nel 1999, quando, dopo molti anni di lavoro dipendente con una azienda di falegnameria, Mirko decise di avviare un'attività propria, specializzata nella vendita ed installazione di infissi. Già nei primi anni, dopo una veloce fase di rodaggio, iniziò la vendita di infissi in legno. Cenci"
 	/>
-	<meta property="og:image" content="/images/fb/fb-chisiamo.jpg" />
+	<meta property="og:image" content="https://ik.imagekit.io/2gweb/nova/fb-chisiamo.jpg" />
 	<meta property="og:image:type" content="image/jpeg" />
 	<meta property="og:image:width" content="1230" />
 	<meta property="og:image:height" content="630" />
@@ -50,9 +50,9 @@
 			</div>
 			<div class="col-md-3">
 				<picture>
-					<source srcset="/images/chi-siamo/chisiamo.jpg" type="image/jpg" />
+					<source srcset="https://ik.imagekit.io/2gweb/nova/chisiamo.webp" type="image/webp" />
 					<img
-						src="/images/chi-siamo/chisiamo.jpg"
+						src="https://ik.imagekit.io/2gweb/nova/chisiamo.webp"
 						class="w-100 object-fit-cover p-4 p-md-2"
 						alt="nova infissi chi siamo"
 					/>

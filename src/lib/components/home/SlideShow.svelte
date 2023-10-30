@@ -9,19 +9,19 @@
 	import MyCarouselCaption from './MyCarouselCaption.svelte';
 	const items = [
 		{
-			url: 'https://www.novainfissi.it/public/img/slide-1.jpg',
+			url: 'https://ik.imagekit.io/2gweb/nova/slide-1.webp',
 			title: null,
 			caption: null,
 			link: null
 		},
 		{
-			url: 'https://www.novainfissi.it/public/img/slide-2.jpg',
+			url: 'https://ik.imagekit.io/2gweb/nova/slide-2.webp',
 			title: 'Esplora il nostro portfolio',
 			caption: 'PORTFOLIO LAVORI',
 			link: '/portfolio'
 		},
 		{
-			url: 'https://www.novainfissi.it/public/img/slide-3.jpg',
+			url: 'https://ik.imagekit.io/2gweb/nova/slide-3.webp',
 			title: 'Scarica i catagloghi dei nostri prodotti',
 			caption: 'CATALOGHI PDF',
 			link: '/cataloghi'

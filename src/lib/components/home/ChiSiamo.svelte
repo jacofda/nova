@@ -7,7 +7,7 @@
 		<Row>
 			<Col md="6">
 				<Figure>
-					<Image fluid alt="Landscape" src="images/home/img-left-3.jpg" />
+					<Image fluid alt="Landscape" src="https://ik.imagekit.io/2gweb/nova/img-left-3.webp" />
 				</Figure>
 			</Col>
 			<Col md="6" class="d-flex flex-column justify-content-center">

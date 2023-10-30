@@ -33,7 +33,7 @@
 			</div>
 			<div class="col-md-6 col-lg-4 text-center">
 				<img
-					src="https://www.novainfissi.it/public/img/centrale-1.png"
+					src="https://ik.imagekit.io/2gweb/nova/centrale-1.webp"
 					class="img-fluid"
 					alt="ospedaletto porte"
 				/>
