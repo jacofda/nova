@@ -36,7 +36,8 @@
 				<ul class="list-style-none info">
 					<li><Icon name="map" /> Via Roma 4 - 38050 - Ospedaletto (TN)</li>
 					<li><Icon name="telephone" /> Tel: 0461 770045</li>
-					<li><Icon name="phone" /> Cell: 347 780 6869</li>
+					<li><Icon name="phone" /> Denise Cenci: 347 038 5908</li>
+					<li><Icon name="phone" /> Mirco Cenci: 347 780 6869</li>
 					<li><Icon name="envelope" /> nova.infissi@gmail.com</li>
 				</ul>
 			</div>
